@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // pull your code from the same SCM you configured in the job
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // replace this with your real build command, e.g. sh 'npm install'
+                echo 'Building...'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+    }
+}
